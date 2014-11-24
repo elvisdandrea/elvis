@@ -1,59 +1,56 @@
-<!-- One -->
 <section id="one">
     <header class="major">
-        <h2>Ipsum lorem dolor aliquam ante commodo<br />
-            magna sed accumsan arcu neque.</h2>
+        <h2>Engenharia de Software<br /></h2>
     </header>
-    <p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
     <ul class="actions">
-        <li><a href="#" class="button">Learn More</a></li>
+        <li>Veja os <a href="article" class="">artigos</a> que demonstram como uma simples forma de pensar podem mudar totalmente o resultado
+            de seu projeto de desenvolvimento de software.</li>
     </ul>
+    <p>Consulte o portfolio da <a href="gravi">GRAVI systems</a> para produtos e serviços de sites e sistemas de gestão web.</p>
 </section>
 
-<!-- Two -->
 <section id="two">
-    <h2>Recent Work</h2>
+    <h2>Palestras e Apresentações</h2>
     <div class="row">
         <article class="6u 12u$(3) work-item">
-            <a href="{$smarty.const.T_IMGURL}/fulls/01.jpg" class="image fit thumb"><img src="{$smarty.const.T_IMGURL}/thumbs/01.jpg" alt="" /></a>
-            <h3>Magna sed consequat tempus</h3>
-            <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            <h3>Scrum</h3>
+            <p>A arte de efetuar o dobro do trabalho na metade do tempo.</p>
+            <a href="{$smarty.const.T_IMGURL}/fulls/01.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/01.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
-            <a href="{$smarty.const.T_IMGURL}/fulls/02.jpg" class="image fit thumb"><img src="{$smarty.const.T_IMGURL}/thumbs/02.jpg" alt="" /></a>
-            <h3>Ultricies lacinia interdum</h3>
-            <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            <h3>Gestão de Projetos</h3>
+            <p>Gestão é resultado, o resto é esforço.</p>
+            <a href="{$smarty.const.T_IMGURL}/fulls/02.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/02.jpg" alt="" /></a>
         </article>
         <article class="6u 12u$(3) work-item">
-            <a href="{$smarty.const.T_IMGURL}/fulls/03.jpg" class="image fit thumb"><img src="{$smarty.const.T_IMGURL}/thumbs/03.jpg" alt="" /></a>
-            <h3>Tortor metus commodo</h3>
-            <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            <h3>Desempenho de Software</h3>
+            <p>Otimização é uma arte, o resultado é uma obra.</p>
+            <a href="{$smarty.const.T_IMGURL}/fulls/03.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/03.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
-            <a href="{$smarty.const.T_IMGURL}/fulls/04.jpg" class="image fit thumb"><img src="{$smarty.const.T_IMGURL}/thumbs/04.jpg" alt="" /></a>
-            <h3>Quam neque phasellus</h3>
-            <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            <h3>Usabilidade de Software</h3>
+            <p>Destaque o necessário, remova o supérfluo.</p>
+            <a href="{$smarty.const.T_IMGURL}/fulls/04.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/04.jpg" alt="" /></a>
         </article>
         <article class="6u 12u$(3) work-item">
-            <a href="{$smarty.const.T_IMGURL}/fulls/05.jpg" class="image fit thumb"><img src="{$smarty.const.T_IMGURL}/thumbs/05.jpg" alt="" /></a>
-            <h3>Nunc enim commodo aliquet</h3>
-            <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            <h3>Web Services</h3>
+            <p>Como e por que integrar meus sistemas.</p>
+            <a href="{$smarty.const.T_IMGURL}/fulls/05.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/05.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
-            <a href="{$smarty.const.T_IMGURL}/fulls/06.jpg" class="image fit thumb"><img src="{$smarty.const.T_IMGURL}/thumbs/06.jpg" alt="" /></a>
-            <h3>Risus ornare lacinia</h3>
-            <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            <h3>Servidor Linux</h3>
+            <p>Como manter um servidor seguro, ágil e inteligente.</p>
+            <a href="{$smarty.const.T_IMGURL}/fulls/06.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/06.jpg" alt="" /></a>
         </article>
     </div>
     <ul class="actions">
-        <li><a href="#" class="button">Full Portfolio</a></li>
+        <li><a href="#" class="button">Veja também o portfolio GRAVI Systems</a></li>
     </ul>
 </section>
 
-<!-- Three -->
 <section id="three">
-    <h2>Get In Touch</h2>
-    <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
+    <h2 id="contact">Contate-me</h2>
+    <p>Interessado em palestras ou um serciço GRAVI Systems? Me conte quem você é e qual serviço é de seu interesse.</p>
     <div class="row">
         <div class="8u 12u$(2)">
             <form method="post" action="#">
@@ -64,24 +61,24 @@
                 </div>
             </form>
             <ul class="actions">
-                <li><input type="submit" value="Send Message" /></li>
+                <li><input class="button special" type="submit" value="Enviar" /></li>
             </ul>
         </div>
         <div class="4u$ 12u$(2)">
             <ul class="labeled-icons">
                 <li>
                     <h3 class="icon fa-home"><span class="label">Address</span></h3>
-                    1234 Somewhere Rd.<br />
-                    Nashville, TN 00000<br />
-                    United States
+                    Silvio Luiz Corrêa, 139.<br />
+                    Forquilhas, São José SC<br />
+                    Brasil
                 </li>
                 <li>
                     <h3 class="icon fa-mobile"><span class="label">Phone</span></h3>
-                    000-000-0000
+                    (48) 9981-8508
                 </li>
                 <li>
                     <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-                    <a href="#">hello@untitled.tld</a>
+                    <a href="#">elvis@gravi.com.br</a>
                 </li>
             </ul>
         </div>

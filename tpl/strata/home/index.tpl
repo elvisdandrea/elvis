@@ -7,6 +7,7 @@
     <!-- Document Head -->
 	{include file="home/head.tpl"}
 	<body id="top">
+    {include file="home/{$smarty.const.LNG}/menutop.tpl"}
 
 		<!-- Header -->
 			{include file="home/{$smarty.const.LNG}/header.tpl"}

@@ -1,5 +1,3 @@
-<!-- Four -->
-<!--
     <section id="four">
         <h2>Elements</h2>
 
@@ -316,4 +314,3 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         </section>
 
     </section>
--->
