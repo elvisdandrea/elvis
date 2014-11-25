@@ -15,32 +15,32 @@
         <article class="6u 12u$(3) work-item">
             <h3>Scrum</h3>
             <p>A arte de efetuar o dobro do trabalho na metade do tempo.</p>
-            <a href="{$smarty.const.T_IMGURL}/fulls/01.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/01.jpg" alt="" /></a>
+            <a href="presentations/view?page=scrum" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/01.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
-            <h3>Gestão de Projetos</h3>
+            <h3>Gestão de Projetos de Software</h3>
             <p>Gestão é resultado, o resto é esforço.</p>
-            <a href="{$smarty.const.T_IMGURL}/fulls/02.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/02.jpg" alt="" /></a>
+            <a href="presentations/view?page=gestaoprojetos" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/02.jpg" alt="" /></a>
         </article>
         <article class="6u 12u$(3) work-item">
-            <h3>Desempenho de Software</h3>
+            <h3>Desempenho e Qualidade de Software</h3>
             <p>Otimização é uma arte, o resultado é uma obra.</p>
-            <a href="{$smarty.const.T_IMGURL}/fulls/03.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/03.jpg" alt="" /></a>
+            <a href="presentations/view?page=qualidadesoftware" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/03.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
             <h3>Usabilidade de Software</h3>
             <p>Destaque o necessário, remova o supérfluo.</p>
-            <a href="{$smarty.const.T_IMGURL}/fulls/04.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/04.jpg" alt="" /></a>
+            <a href="presentations/view?page=usabilidade" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/04.jpg" alt="" /></a>
         </article>
         <article class="6u 12u$(3) work-item">
             <h3>Web Services</h3>
             <p>Como e por que integrar meus sistemas.</p>
-            <a href="{$smarty.const.T_IMGURL}/fulls/05.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/05.jpg" alt="" /></a>
+            <a href="presentations/view?page=webservice" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/05.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
             <h3>Servidor Linux</h3>
             <p>Como manter um servidor seguro, ágil e inteligente.</p>
-            <a href="{$smarty.const.T_IMGURL}/fulls/06.jpg" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/06.jpg" alt="" /></a>
+            <a href="presentations/view?page=scrum" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/06.jpg" alt="" /></a>
         </article>
     </div>
     <ul class="actions">

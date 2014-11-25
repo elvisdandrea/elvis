@@ -1,6 +1,8 @@
 <?php
 
-/* 
+/**
+ * Class Control
+ *
  * The App Controller Class
  *
  */
@@ -14,11 +16,21 @@ class Control {
      */
     private $post;
 
+
     /**
      * Thou shalt not call superglobals directly
+     *
+     * @var
+     */
+    private $get;
+
+    /**
+     * Thou shalt not call superglobals directly
+     * even though I'm doing it in this function
      */
     public function __construct() {
         $this->post = $_POST;
+        $this->get  = $_GET;
     }
 
     /**
@@ -32,6 +44,19 @@ class Control {
             return (isset($this->post[$name]) ? $this->post[$name] : false);
         }
         return $this->post;
+    }
+
+    /**
+     * Returns a URI query string value
+     *
+     * @param   bool|string     $name       - the query string field name
+     * @return  mixed
+     */
+    protected function getQueryString($name = false) {
+        if ($name) {
+            return (isset($this->get[$name]) ? $this->get[$name] : false);
+        }
+        return $this->get;
     }
 
     /**

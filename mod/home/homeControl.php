@@ -47,7 +47,7 @@ class homeControl extends Control {
      */
     public function itStarts() {
 
-        $this->view->loadHome();
+        $this->view->loadTemplate('index');
         echo $this->view->render();
     }
 }

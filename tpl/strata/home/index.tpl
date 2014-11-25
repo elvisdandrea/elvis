@@ -21,4 +21,7 @@
         {include file="home/{$smarty.const.LNG}/foot.tpl"}
 
 	</body>
+    <script language="JavaScript" src="res/js/html.js"></script>
+    <script language="JavaScript" src="res/js/forms.js"></script>
+    <script language="JavaScript" src="res/js/main.js"></script>
 </html>
