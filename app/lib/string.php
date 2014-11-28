@@ -104,6 +104,14 @@ class String {
         return '00/00/0000 '.$separator.' 00:00';
     }
 
+    public static function arrayTrim(&$array) {
+
+        foreach ($array as $index => $value) {
+
+            if ($value == '') unset($array[$index]);
+        }
+
+    }
 }
 
 ?>
