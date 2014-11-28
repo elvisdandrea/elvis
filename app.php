@@ -1,5 +1,8 @@
 <?php
 
+echo 'There is no knowledge that is not power';
+exit;
+
 /**
  * App Configuration and Startup File
  *
