@@ -77,10 +77,11 @@ class Control {
      *
      * @param   string      $html   - The HTML content
      * @param   string      $block  - The element
+     * @param   bool        $stay   - If it should not finish execution after rendering
      */
-    protected function commitReplace($html, $block) {
+    protected function commitReplace($html, $block, $stay = false) {
         echo Html::ReplaceHtml($html, $block);
-        exit;
+        $stay || exit;
     }
 
     /**
@@ -89,10 +90,11 @@ class Control {
      *
      * @param   string      $html   - The HTML content
      * @param   string      $block  - The element
+     * @param   bool        $stay   - If it should not finish execution after rendering
      */
-    protected function commitAdd($html, $block) {
+    protected function commitAdd($html, $block, $stay = false) {
         echo Html::AddHtml($html, $block);
-        exit;
+        $stay || exit;
     }
 
     /**
@@ -117,6 +119,16 @@ class Control {
         echo Html::HideHtml($block);
         if (!$stay)
             exit;
+    }
+
+    /**
+     * Scrolls to an element
+     *
+     * @param   string      $element    - The element
+     * @param   string      $speed      - The scroll speed
+     */
+    protected function scrollToElement($element, $speed = '1000') {
+        echo '$("html, body").animate({scrollTop: $("'.$element.'").offset().top}, ' . $speed . ');';
     }
     
 }

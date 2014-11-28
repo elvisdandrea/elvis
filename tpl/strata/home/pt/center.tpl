@@ -18,14 +18,14 @@
             <a href="presentations/view?page=scrum" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/01.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
-            <h3>Gestão de Projetos de Software</h3>
+            <h3>Gestão de Projetos e qualidade de Software</h3>
             <p>Gestão é resultado, o resto é esforço.</p>
             <a href="presentations/view?page=gestaoprojetos" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/02.jpg" alt="" /></a>
         </article>
         <article class="6u 12u$(3) work-item">
-            <h3>Desempenho e Qualidade de Software</h3>
+            <h3>Desempenho e Segurançá de Software</h3>
             <p>Otimização é uma arte, o resultado é uma obra.</p>
-            <a href="presentations/view?page=qualidadesoftware" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/03.jpg" alt="" /></a>
+            <a href="presentations/view?page=desempenhosoftware" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/03.jpg" alt="" /></a>
         </article>
         <article class="6u$ 12u$(3) work-item">
             <h3>Usabilidade de Software</h3>

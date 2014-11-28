@@ -45,7 +45,8 @@ class presentationsControl extends Control {
         $page = $this->getQueryString('page');
         $this->view->loadTemplate($page);
 
-        $this->commitReplace($this->view->render(), '#two');
+        $this->commitReplace($this->view->render(), '#two', true);
+        $this->scrollToElement('#two');
 
     }
 
