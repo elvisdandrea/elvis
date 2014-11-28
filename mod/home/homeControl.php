@@ -50,4 +50,9 @@ class homeControl extends Control {
         $this->view->loadTemplate('index');
         echo $this->view->render();
     }
+
+    public function home() {
+        $this->view->loadTemplate( LNG . '/center');
+        $this->commitReplace($this->view->render(), '#two');
+    }
 }

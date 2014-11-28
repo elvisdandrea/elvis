@@ -10,7 +10,7 @@
 </section>
 
 <section id="two">
-    <h2>Palestras e Apresentações</h2>
+    <h2>Palestras, cursos e Apresentações</h2>
     <div class="row">
         <article class="6u 12u$(3) work-item">
             <h3>Scrum</h3>
