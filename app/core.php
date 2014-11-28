@@ -70,7 +70,7 @@ class core {
     public function execute() {
 
         $uri = $this->loadUrl();
-        if (count($uri)>1) {
+        if (count($uri)>1 && $uri[0] != '' && $uri[1] != '') {
             define('CALL', $uri[0]);
             $module = $uri[0].'Control';
             $action = $uri[1];
