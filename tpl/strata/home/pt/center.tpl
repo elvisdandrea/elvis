@@ -6,7 +6,7 @@
         <li>Veja os <a href="article" class="">artigos</a> que demonstram como uma simples forma de pensar podem mudar totalmente o resultado
             de seu projeto de desenvolvimento de software.</li>
     </ul>
-    <p>Consulte o portfolio da <a href="gravi">GRAVI systems</a> para produtos e serviços de sites e sistemas de gestão web.</p>
+    <p>Consulte o portfolio da <a href="gravi">GRAVI Web</a> para produtos e serviços de sites e sistemas de gestão web.</p>
 </section>
 
 <section id="two">
@@ -23,7 +23,7 @@
             <a href="presentations/view?page=gestaoprojetos" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/02.jpg" alt="" /></a>
         </article>
         <article class="6u 12u$(3) work-item">
-            <h3>Desempenho e Segurançá de Software</h3>
+            <h3>Desempenho e Segurança de Software</h3>
             <p>Otimização é uma arte, o resultado é uma obra.</p>
             <a href="presentations/view?page=desempenhosoftware" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/03.jpg" alt="" /></a>
         </article>
@@ -40,7 +40,7 @@
         <article class="6u$ 12u$(3) work-item">
             <h3>Servidor Linux</h3>
             <p>Como manter um servidor seguro, ágil e inteligente.</p>
-            <a href="presentations/view?page=scrum" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/06.jpg" alt="" /></a>
+            <a href="presentations/view?page=linux" class="image fit thumb"><img height="210px" src="{$smarty.const.T_IMGURL}/thumbs/06.jpg" alt="" /></a>
         </article>
     </div>
     <ul class="actions">
