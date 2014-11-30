@@ -105,8 +105,7 @@ class Control {
      */
     protected function commitShow($block, $stay = false) {
         echo Html::ShowHtml($block);
-        if (!$stay)
-            exit;
+        $stay || exit;
     }
 
     /**
@@ -117,8 +116,7 @@ class Control {
      */
     protected function commitHide($block, $stay = false) {
         echo Html::HideHtml($block);
-        if (!$stay)
-            exit;
+        $stay || exit;
     }
 
     /**
@@ -126,9 +124,11 @@ class Control {
      *
      * @param   string      $element    - The element
      * @param   string      $speed      - The scroll speed
+     * @param   bool        $stay       - If it should not finish execution after rendering
      */
-    protected function scrollToElement($element, $speed = '1000') {
+    protected function scrollToElement($element, $speed = '1000', $stay = false) {
         echo '$("html, body").animate({scrollTop: $("'.$element.'").offset().top}, ' . $speed . ');';
+        $stay || exit;
     }
     
 }

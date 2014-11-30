@@ -51,8 +51,11 @@ class homeControl extends Control {
         echo $this->view->render();
     }
 
+    /**
+     * When returning the home page, loads the inner content only
+     */
     public function home() {
-        $this->view->loadTemplate( LNG . '/center');
+        $this->view->loadTemplate( LNG . '/centercontent');
         $this->commitReplace($this->view->render(), '#two');
     }
 }
