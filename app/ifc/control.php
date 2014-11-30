@@ -29,8 +29,8 @@ class Control {
      * even though I'm doing it in this function
      */
     public function __construct() {
-        $this->post = $_POST;
-        $this->get  = $_GET;
+        $this->post = String::ClearArray($_POST);
+        $this->get  = String::ClearArray($_GET);
     }
 
     /**
