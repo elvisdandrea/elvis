@@ -57,6 +57,25 @@ class Control {
     }
 
     /**
+     * Validates if a POST value is empty
+     *
+     * Indexes should be passed as
+     * parameter
+     *
+     * @return bool
+     */
+    protected function validatePost() {
+
+        $args = func_get_args();
+
+        foreach ($args as $arg) {
+            if (!isset($this->post[$arg]) || $this->post[$arg] == '')
+                return false;
+        }
+        return true;
+    }
+
+    /**
      * Throws a 404 Error
      *
      * Used for security features

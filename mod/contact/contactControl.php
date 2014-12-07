@@ -45,6 +45,10 @@ class contactControl extends Control {
         if ($this->getPost('validation') != '')
             $this->throw404();
 
+        if (!$this->validatePost('email', 'name', 'message')) {
+            $this->commitShow('#empty');
+        }
+
         $data = $this->getPost('email', 'name', 'message');
         $sent = $this->model->registerContact($data);
 
