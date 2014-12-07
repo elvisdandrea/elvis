@@ -47,10 +47,11 @@
     }
 
     header#demo-header {
-        /*background: none repeat scroll 0% 0% rgba(55, 61, 73, 0.976); */
+        border-bottom: 2px #ccc solid;
+        background-color: #e6e6e6;
         color: #FFF;
         box-shadow: none;
-        height: 50px;
+        height: 60px;
     }
 
     #demo-header .right {
