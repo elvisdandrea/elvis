@@ -8,6 +8,7 @@
                     <div class="6u 12u$(3)"><input type="text" name="name" id="name" placeholder="Name" /></div>
                     <div class="6u$ 12u$(3)"><input type="email" name="email" id="email" placeholder="Email" /></div>
                     <div class="12u$"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+                    <input type="hidden" name="validation" value=""/>
                 </div>
                 <ul class="actions">
                     <li><input class="button special" type="submit" value="Enviar" /></li>

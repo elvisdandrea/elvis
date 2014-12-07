@@ -198,6 +198,8 @@ class Model {
 
 
     public function __construct($connection = 'connection1') {
+
+        //$this->generateConnectionFile();      //For first time, create the database connection file
         $this->loadConnectionFile($connection);
         $this->setConnection($connection);
     }
@@ -257,6 +259,28 @@ class Model {
     }
 
     /**
+     * Whenever you need to create a connection file,
+     * Just insert data and call this function
+     * in any method you want
+     */
+    public function generateConnectionFile() {
+
+        $data = array(
+            'host' => '',
+            'user' => '',
+            'pass' => '',
+            'db'   => ''
+        );
+
+        $name = '';
+
+        $data = json_encode($data);
+        $data = CR_::encrypt($data);
+
+        file_put_contents(MODELDIR . '/' . md5($name), $data);
+    }
+
+    /**
      * Creates a new connection from
      * encrypted string in the
      * Connection Resource List
@@ -267,6 +291,7 @@ class Model {
     public function createNewConnection($name, $data) {
         $data = CR_::decrypt($data);
         $json = json_decode($data, true);
+
         if ($json) {
             $this->connections[$name] = $json;
         }
@@ -278,11 +303,12 @@ class Model {
      * @param $name     - The Connection Name
      */
     private function connect($name) {
+
         $this->connections[$name]['conn'] =
             new PDO(
-                'mysql:host=' . $this->connections['host'] . ';dbname=' . $this->connections['db'],
-                $this->connections['user'],
-                $this->connections['pass']);
+                'mysql:host=' . $this->connections[$name]['host'] . ';dbname=' . $this->connections[$name]['db'],
+                $this->connections[$name]['user'],
+                $this->connections[$name]['pass']);
     }
 
     /**
@@ -306,9 +332,10 @@ class Model {
     /**
      * Executes a Query
      *
-     * @param   $query                - Query string
-     * @param   bool $setUtf8         - Executes SET NAMES 'utf-8' before running a query (recommended for insert/update)
+     * @param   string  $query          - Query string
+     * @param   bool    $setUtf8        - Executes SET NAMES 'utf-8' before running a query (recommended for insert/update)
      * @return  array
+     * @throws  Exception               - Only when on Dev Enviroment
      */
     private function Exec($query, $setUtf8 = false) {
         $this->connect($this->connection);
@@ -316,12 +343,13 @@ class Model {
         $result = $this->connections[$this->connection]['conn']->prepare($query);
         $result->execute();
         $info = $result->errorInfo();
-        #if ($info[2] != '') {
-        #    ExceptionHandler::sqlFatalErrorHandler($query, $info[2]);
-        #}
-        if (is_bool($result)) {
-            return $result;
+
+        $this->result = $info[2] == '';
+
+        if (!$this->result && ENVDEV == 1) {
+            throw new Exception($query . '<br>' . $info[2]);
         }
+
         $dataset = $this->Mount($result);
         if ($setUtf8) $this->connections[$this->connection]['conn']->prepare("SET NAMES 'latin1'")->execute();
         return $dataset;
@@ -344,7 +372,7 @@ class Model {
      * @param   bool    $safe       - Safe Delete: will not run if there's no WHERE clause
      */
     protected function runDelete($safe = true) {
-        $this->result = $this->Exec($this->getDeleteQuery($safe));
+        $this->dataset = $this->Exec($this->getDeleteQuery($safe));
     }
 
     /**
@@ -354,7 +382,7 @@ class Model {
      * @param   bool    $safe       - Safe Insert: will not run if there's no WHERE clause
      */
     protected function runInsert($safe = true) {
-        $this->result = $this->Exec($this->GetInsert($safe));
+        $this->dataset = $this->Exec($this->GetInsert($safe));
     }
 
     /**
@@ -364,7 +392,7 @@ class Model {
      * @param   bool    $safe       - Safe Update: will not run if there's no WHERE clause
      */
     protected function runUpdate($safe = true) {
-        $this->result = $this->Exec($this->getUpdateQuery($safe), true);
+        $this->dataset = $this->Exec($this->getUpdateQuery($safe), true);
     }
 
     /**

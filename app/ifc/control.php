@@ -36,14 +36,34 @@ class Control {
     /**
      * Returns a post value
      *
-     * @param   bool|string     $name       - the post field name
      * @return  mixed
      */
-    protected function getPost($name = false) {
-        if ($name) {
-            return (isset($this->post[$name]) ? $this->post[$name] : false);
+    protected function getPost() {
+
+        $args = func_get_args();
+
+        if (count($args) == 0)
+            return $this->post;
+
+        if (count($args) == 1)
+            return $this->post[$args[0]];
+
+        $result = array();
+        foreach ($args as $arg) {
+            !isset($this->post[$arg]) || $result[$arg] = $this->post[$arg];
         }
-        return $this->post;
+
+        return $result;
+    }
+
+    /**
+     * Throws a 404 Error
+     *
+     * Used for security features
+     */
+    protected function throw404() {
+        header('HTTP/1.0 404 Not Found');
+        exit;
     }
 
     /**

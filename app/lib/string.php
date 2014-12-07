@@ -38,7 +38,7 @@ class String {
             if ( is_array( $value ) ) {
                 $array[$key] = self::ClearArray( $value );
             } else {
-                $array[$value] = self::ClearString( $value );
+                $array[$key] = self::ClearString( $value );
             }
         }
         return $array;

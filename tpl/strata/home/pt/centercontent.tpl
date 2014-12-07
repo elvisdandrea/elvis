@@ -33,6 +33,6 @@
         </article>
     </div>
     <ul class="actions">
-        <li><a href="#" class="button">Veja também o portfolio GRAVI Systems</a></li>
+        <!--<li><a href="#" class="button">Veja também o portfolio GRAVI Systems</a></li>-->
     </ul>
 </section>

@@ -42,11 +42,19 @@ class contactControl extends Control {
      */
     public function send() {
 
-        
+        if ($this->getPost('validation') != '')
+            $this->throw404();
+
+        $data = $this->getPost('email', 'name', 'message');
+        $sent = $this->model->registerContact($data);
 
         $tpl = 'sent';
+
+        if (!$sent)
+            $tpl = 'ops';
+
         $this->view->loadTemplate($tpl);
-        $this->commitAdd($this->view->render(), '#three');
+        $this->commitReplace($this->view->render(), '#three');
 
     }
 
