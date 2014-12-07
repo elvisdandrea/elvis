@@ -22,6 +22,6 @@
 
 	</body>
     <script language="JavaScript" src="res/js/html.js"></script>
-    <script language="JavaScript" src="res/js/forms.js"></script>
+    <script language="JavaScript" src="res/js/md5.js"></script>
     <script language="JavaScript" src="res/js/main.js"></script>
 </html>

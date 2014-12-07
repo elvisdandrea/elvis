@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * Class contactControl
+ *
+ * @author:     Elvis D'Andrea
+ * @email:      elvis.vista@gmail.com
+ *
+ */
+
+
+class contactControl extends Control {
+
+    /**
+     * The Model
+     *
+     * @var contactModel
+     */
+    private $model;
+
+    /**
+     * The View
+     *
+     * @var contactView
+     */
+    private $view;
+
+    /**
+     * The constructor
+     *
+     * It creates the Model and View Instances
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->model = new contactModel();
+        $this->view  = new contactView();
+    }
+
+    /**
+     * Sends the important contact
+     *
+     */
+    public function send() {
+
+        
+
+        $tpl = 'sent';
+        $this->view->loadTemplate($tpl);
+        $this->commitAdd($this->view->render(), '#three');
+
+    }
+
+
+}

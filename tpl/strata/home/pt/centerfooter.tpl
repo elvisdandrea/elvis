@@ -3,16 +3,16 @@
     <p>Interessado em palestras ou um serciço GRAVI Systems? Me conte quem você é e qual serviço é de seu interesse.</p>
     <div class="row">
         <div class="8u 12u$(2)">
-            <form method="post" action="#">
+            <form action="contact/send">
                 <div class="row uniform 50%">
                     <div class="6u 12u$(3)"><input type="text" name="name" id="name" placeholder="Name" /></div>
                     <div class="6u$ 12u$(3)"><input type="email" name="email" id="email" placeholder="Email" /></div>
                     <div class="12u$"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
                 </div>
+                <ul class="actions">
+                    <li><input class="button special" type="submit" value="Enviar" /></li>
+                </ul>
             </form>
-            <ul class="actions">
-                <li><input class="button special" type="submit" value="Enviar" /></li>
-            </ul>
         </div>
         <div class="4u$ 12u$(2)">
             <ul class="labeled-icons">

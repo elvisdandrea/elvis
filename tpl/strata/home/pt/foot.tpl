@@ -5,6 +5,7 @@
         <li><a href="mailto://elvis@gravi.com.br" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
     </ul>
     <ul class="copyright">
-        <li>&copy; Elvis D'Andrea</li><li><a href="http://gravi.com.br">GRAVI Systems</a></li>
+        <li>&copy; Elvis D'Andrea</li>
+        <!--<li><a href="http://gravi.com.br">GRAVI Systems</a></li>-->
     </ul>
 </footer>
