@@ -47,7 +47,7 @@
     }
 
     header#demo-header {
-        background: none repeat scroll 0% 0% rgba(55, 61, 73, 0.976);
+        /*background: none repeat scroll 0% 0% rgba(55, 61, 73, 0.976); */
         color: #FFF;
         box-shadow: none;
         height: 50px;
