@@ -32,7 +32,7 @@ define('LNG', 'pt');
 /**
  * Development Enviroment
  */
-define('ENVDEV', '1');
+define('ENVDEV', '0');
 
 /**
  * Register Handler Functions
