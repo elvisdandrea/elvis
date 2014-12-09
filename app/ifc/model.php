@@ -180,6 +180,29 @@ class Model {
     public $dataset = array();
 
     /**
+     * The Result of a
+     * query can be displayed in a grid
+     *
+     * Therefore, we need a template file for it
+     *
+     * @var string
+     */
+    private $dbGridTemplate = 'dbGrid';
+
+    /**
+     * We always need a custom grid, where
+     * the titles are human readable and
+     * we don't want to show all columns
+     *
+     * So, we can create a list of the columns
+     * we're using in the grid and make a title
+     * for them
+     *
+     * @var array
+     */
+    private $dbGridColumns = array();
+
+    /**
      * The Current Connection Resource Name
      *
      * @var string
@@ -204,8 +227,52 @@ class Model {
         $this->setConnection($connection);
     }
 
+    /**
+     * Sets current connection
+     *
+     * @param   string      $name       - The connection name
+     */
     public function setConnection($name) {
         $this->connection = $name;
+    }
+
+    /**
+     * Sets the template file to render
+     * a grid with the dataset content
+     *
+     * @param   string      $name       - The template name
+     */
+    public function setDbGridTemplate($name) {
+        $this->dbGridTemplate = $name;
+    }
+
+    /**
+     * Adds a column in dbGrid columns list
+     *
+     * @param   string      $title      - The column title
+     * @param   string      $field      - The column field name
+     */
+    public function addGridColumn($title, $field) {
+        $this->dbGridColumns[$title] = $field;
+    }
+
+    /**
+     * Whenever we need to set an entire set
+     * of columns at once, here's a method
+     *
+     * @param   array       $columnList     - An array containing all columns with title => field structure
+     */
+    public function addGridColumns(array $columnList) {
+        $this->dbGridColumns = array_merge($this->dbGridColumns, $columnList);
+    }
+
+    /**
+     * Removes a dbGrid Column
+     *
+     * @param   string      $title      - The column title to be removed
+     */
+    public function removeGridColumn($title) {
+        if (isset($this->dbGridColumns[$title])) unset($this->dbGridColumns[$title]);
     }
 
     /**
@@ -713,6 +780,21 @@ class Model {
      */
     public function getResult() {
         return $this->result;
+    }
+
+
+    /**
+     * Display the Dataset in a grid
+     */
+    public function dbGrid() {
+
+        $view = new View();
+        $view->setVariable('columns', $this->dbGridColumns);
+        $view->setVariable('dataset', $this->dataset);
+        $view->loadTemplate($this->dbGridTemplate);
+
+        return $view->render();
+
     }
 
 
