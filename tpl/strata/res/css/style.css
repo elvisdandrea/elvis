@@ -753,6 +753,10 @@
 		overflow-x: auto;
 	}
 
+    .table-wrapper td {
+        vertical-align: middle;
+    }
+
 	table {
 		margin: 0 0 2em 0;
 		width: 100%;

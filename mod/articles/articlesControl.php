@@ -46,9 +46,10 @@ class articlesControl extends Control {
 
         $this->view->loadTemplate(LNG . '/articlesList');
         $this->model->getArticlesList();
-
-        $this->model->addGridColumn('Artigo', 'title');
+        $this->model->addGridColumn('Imagem', 'image', 'Image');
+        $this->model->addGridColumn('Artigo', 'title', 'Text', 'description');
         $this->model->showDbGridTitles(false);
+        $this->model->setDbGridAutoHeader(false);
         $this->model->setGridRowLink('articles/view', 'id');
         $this->view->setVariable('table', $this->model->dbGrid());
 

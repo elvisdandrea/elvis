@@ -20,8 +20,10 @@ class articlesModel extends Model {
      */
     public function getArticlesList() {
         $this->addField('id');
+        $this->addField('image');
         $this->addField('sdate');
         $this->addField('title');
+        $this->addField('description');
 
         $this->addFrom('articles');
 

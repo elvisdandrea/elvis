@@ -211,6 +211,16 @@ class Model {
      */
     private $dbGridShowHeader = true;
 
+
+    /**
+     * Sometimes we want to add all
+     * columns in the Grid, so we don't
+     * want to add column by column
+     *
+     * @var bool
+     */
+    private $dbGridAutoHeader = false;
+
     /**
      * When rendering a table, we may need
      * to set an onclick event for the rows
@@ -269,9 +279,16 @@ class Model {
      *
      * @param   string      $title      - The column title
      * @param   string      $field      - The column field name
+     * @param   string      $type       - Text|Date|Input|Checkbox|Select|Image
+     * @param   bool|string $subtitle   - A subtitle field: a text to be show under the line content
      */
-    public function addGridColumn($title, $field) {
-        $this->dbGridColumns[$title] = $field;
+    public function addGridColumn($title, $field, $type = 'Text', $subtitle = false) {
+        $this->dbGridColumns[$field] = array(
+            'field'     => $field,
+            'title'     => $title,
+            'type'      => $type,
+            'subtitle'  => $subtitle
+        );
     }
 
     /**
@@ -292,6 +309,18 @@ class Model {
      */
     public function showDbGridTitles($show) {
         $this->dbGridShowHeader = $show;
+    }
+
+    /**
+     * Sets the Auto Header
+     *
+     * Set to True if you need to show
+     * all columns in the grid
+     *
+     * @param   bool        $header         - True|False
+     */
+    public function setDbGridAutoHeader($header) {
+        $this->dbGridAutoHeader = $header;
     }
 
     /**
@@ -849,6 +878,14 @@ class Model {
         $view->setVariable('showTitles', $this->dbGridShowHeader);
         $view->setVariable('rowAction', $this->gridRowLink['action']);
         $view->setVariable('rowFieldId', $this->gridRowLink['fieldId']);
+
+        if ($this->dbGridAutoHeader) {
+            $this->dbGridColumns = array();
+            foreach ($this->getRow(0) as $field => $value) {
+                $this->addGridColumn(ucwords(String::decamelize($field)), $field);
+            }
+        }
+
         $view->setVariable('head', $this->dbGridColumns);
         $view->setVariable('content', $this->dataset);
         $view->loadTemplate($this->dbGridTemplate);
