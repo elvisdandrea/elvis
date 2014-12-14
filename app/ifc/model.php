@@ -789,8 +789,9 @@ class Model {
     public function dbGrid() {
 
         $view = new View();
-        $view->setVariable('columns', $this->dbGridColumns);
-        $view->setVariable('dataset', $this->dataset);
+        $view->setVariable('id', $this->id);
+        $view->setVariable('head', $this->dbGridColumns);
+        $view->setVariable('content', $this->dataset);
         $view->loadTemplate($this->dbGridTemplate);
 
         return $view->render();
