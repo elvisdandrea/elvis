@@ -212,6 +212,14 @@ class Model {
     private $dbGridShowHeader = true;
 
     /**
+     * When rendering a table, we may need
+     * to set an onclick event for the rows
+     *
+     * @var array
+     */
+    private $gridRowLink = array('action' => '', 'fieldId' => '');
+
+    /**
      * The Current Connection Resource Name
      *
      * @var string
@@ -232,6 +240,7 @@ class Model {
     public function __construct($connection = 'connection1') {
 
         //$this->generateConnectionFile();      //For first time, create the database connection file
+        $this->id = uniqid();
         $this->loadConnectionFile($connection);
         $this->setConnection($connection);
     }
@@ -295,12 +304,39 @@ class Model {
     }
 
     /**
+     * Adds a destination link for
+     * rows in a DBGrid Table
+     *
+     * The link will be set as described below:
+     *
+     * Value set as action:     destination
+     * Value set as fieldId:    id
+     * Result URL:              http://siteurl/destination/{row['fieldId']}
+     *
+     * @param   string      $action
+     * @param   string      $fieldId
+     */
+    public function setGridRowLink($action, $fieldId) {
+        $this->gridRowLink['action'] = $action;
+        $this->gridRowLink['fieldId'] = $fieldId;
+    }
+
+    /**
      * Sets the Model ID
      *
      * @param $id
      */
     protected function setId($id) {
         $this->id = $id;
+    }
+
+    /**
+     * Returns the Model ID
+     *
+     * @return string
+     */
+    protected function getId() {
+        return $this->id;
     }
 
     /**
@@ -811,6 +847,8 @@ class Model {
 
         $view->setVariable('id', $this->id);
         $view->setVariable('showTitles', $this->dbGridShowHeader);
+        $view->setVariable('rowAction', $this->gridRowLink['action']);
+        $view->setVariable('rowFieldId', $this->gridRowLink['fieldId']);
         $view->setVariable('head', $this->dbGridColumns);
         $view->setVariable('content', $this->dataset);
         $view->loadTemplate($this->dbGridTemplate);

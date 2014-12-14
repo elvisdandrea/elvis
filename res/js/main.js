@@ -53,3 +53,10 @@ $(document).on('submit','form[action]', function(a){
     return false;
 
 });
+
+function quickLink(action) {
+    Html.Post(action,'',function(r){
+        eval(r);
+        return false;
+    });
+}

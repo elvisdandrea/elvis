@@ -49,9 +49,17 @@ class articlesControl extends Control {
 
         $this->model->addGridColumn('Artigo', 'title');
         $this->model->showDbGridTitles(false);
+        $this->model->setGridRowLink('articles/view', 'id');
         $this->view->setVariable('table', $this->model->dbGrid());
 
         $this->commitReplace($this->view->render(), '#two');
+    }
+
+    public function view() {
+
+        $id = $this->getQueryString('id');
+        print_r($id);
+        exit;
     }
 
 
