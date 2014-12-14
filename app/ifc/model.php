@@ -203,6 +203,15 @@ class Model {
     private $dbGridColumns = array();
 
     /**
+     * Sometimes we don't need the
+     * table titles, so we may want
+     * to deactivate it
+     *
+     * @var bool
+     */
+    private $dbGridShowHeader = true;
+
+    /**
      * The Current Connection Resource Name
      *
      * @var string
@@ -264,6 +273,16 @@ class Model {
      */
     public function addGridColumns(array $columnList) {
         $this->dbGridColumns = array_merge($this->dbGridColumns, $columnList);
+    }
+
+    /**
+     * Deactivates the Table headers
+     * when rendering a DbGrid
+     *
+     * @param   bool        $show           - True|False
+     */
+    public function showDbGridTitles($show) {
+        $this->dbGridShowHeader = $show;
     }
 
     /**
@@ -789,7 +808,9 @@ class Model {
     public function dbGrid() {
 
         $view = new View();
+
         $view->setVariable('id', $this->id);
+        $view->setVariable('showTitles', $this->dbGridShowHeader);
         $view->setVariable('head', $this->dbGridColumns);
         $view->setVariable('content', $this->dataset);
         $view->loadTemplate($this->dbGridTemplate);

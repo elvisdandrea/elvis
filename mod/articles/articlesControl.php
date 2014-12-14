@@ -46,6 +46,9 @@ class articlesControl extends Control {
 
         $this->view->loadTemplate(LNG . '/articlesList');
         $this->model->getArticlesList();
+
+        $this->model->addGridColumn('Artigo', 'title');
+        $this->model->showDbGridTitles(false);
         $this->view->setVariable('table', $this->model->dbGrid());
 
         $this->commitReplace($this->view->render(), '#two');
