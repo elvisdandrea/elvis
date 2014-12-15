@@ -281,13 +281,15 @@ class Model {
      * @param   string      $field      - The column field name
      * @param   string      $type       - Text|Date|Input|Checkbox|Select|Image
      * @param   bool|string $subtitle   - A subtitle field: a text to be show under the line content
+     * @param   array       $listSource - If we have a Select input inside the table, let's populate the options with this list
      */
-    public function addGridColumn($title, $field, $type = 'Text', $subtitle = false) {
+    public function addGridColumn($title, $field, $type = 'Text', $subtitle = false, $listSource = array()) {
         $this->dbGridColumns[$field] = array(
-            'field'     => $field,
-            'title'     => $title,
-            'type'      => $type,
-            'subtitle'  => $subtitle
+            'field'         => $field,
+            'title'         => $title,
+            'type'          => $type,
+            'subtitle'      => $subtitle,
+            'listSource'    => $listSource
         );
     }
 
