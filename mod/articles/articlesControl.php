@@ -53,14 +53,21 @@ class articlesControl extends Control {
         $this->model->setGridRowLink('articles/view', 'id');
         $this->view->setVariable('table', $this->model->dbGrid());
 
-        $this->commitReplace($this->view->render(), '#two');
+        $this->commitReplace($this->view->render(), '#two', true);
+        $this->scrollToElement('#two');
     }
 
+    /**
+     * Action that views an article
+     */
     public function view() {
 
         $id = $this->getQueryString('id');
-        print_r($id);
-        exit;
+        $this->model->getArticle($id);
+        $this->view->setVariable('content', $this->model->getRow(0));
+        $this->view->loadTemplate(LNG . '/view');
+        $this->commitReplace($this->view->render(), '#two', true);
+        $this->scrollToElement('#two');
     }
 
 
