@@ -36,7 +36,6 @@
 
     .menu-top {
 
-        background-color: #CCC;
         width: 100%;
         height: 30px;
         display: block;
@@ -48,7 +47,6 @@
 
     header#demo-header {
         border-bottom: 2px #ccc solid;
-        background-color: #e6e6e6;
         color: #FFF;
         box-shadow: none;
         height: 60px;
@@ -1070,7 +1068,7 @@
 		#main > section {
 			border-top: solid 2px #efefef;
 			margin: 4em 0 0 0;
-			padding: 4em 4em 0 0;
+			padding: 4em 0em 0 0;
 		}
 
 			#main > section:first-child {
