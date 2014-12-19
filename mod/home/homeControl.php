@@ -53,16 +53,16 @@ class homeControl extends Control {
             define('CALL', $uri[0]);
             $module = $uri[0].'Control';
             $action = $uri[1];
-            if (class_exists($module)) {
+
+            if (method_exists($module, $action)){
                 $control = new $module;
-                if (method_exists($control,$action)){
-                    ob_start();
-                    $control->$action();
-                    $result = ob_get_contents();
-                    ob_end_clean();
-                    $this->view->setVariable('page_content', $result);
-                }
+                ob_start();
+                $control->$action();
+                $result = ob_get_contents();
+                ob_end_clean();
+                $this->view->setVariable('page_content', $result);
             }
+
         }
         echo $this->view->render();
         exit;
