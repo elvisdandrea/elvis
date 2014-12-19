@@ -17,4 +17,4 @@ Contrate o curso ou palestra de Web Service e desenvolva API's de qualidade e es
     <li>Tratamento de Mensagens</li>
     <li>Self correcting system - Inteligência artificial para correção automática de erros</li>
 </ul>
-<a href="home/home">voltar</a>
+<a href="{$smarty.const.BASEDIR}home/home">voltar</a>

@@ -4,4 +4,4 @@
     </header>
     {$table}
 </section>
-<a href="home/home">Voltar</a>
+<a href="{$smarty.const.BASEDIR}home/home">Voltar</a>

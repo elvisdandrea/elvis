@@ -8,6 +8,9 @@
     <script src="{$smarty.const.T_JSURL}/jquery.poptrox.min.js"></script>
     <script src="{$smarty.const.T_JSURL}/skel.min.js"></script>
     <script src="{$smarty.const.T_JSURL}/init.js"></script>
+    <script>
+        var systemurl = "{$smarty.const.MAINURL}";
+    </script>
     <noscript>
         <link rel="stylesheet" href="{$smarty.const.T_CSSURL}/skel.css" />
         <link rel="stylesheet" href="{$smarty.const.T_CSSURL}/style.css" />

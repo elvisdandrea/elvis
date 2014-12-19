@@ -7,11 +7,14 @@
 
 $(document).on('click','a[href]', function(a){
 
-    if ( $(this).attr('href').indexOf('#') === 0 ) { return; }
+    if ( $(this).attr('href').indexOf('#') === 0 ||
+         $(this).attr('href').indexOf('http://') === 0 ) { return; }
 
+    var action = $(this).attr('href');
     a.preventDefault();
-    Html.Post($(this).attr('href'),'',function(r){
+    Html.Post(action,'',function(r){
         eval(r);
+        window.history.replaceState(undefined, '', action);
         return false;
     });
 });
@@ -57,6 +60,7 @@ $(document).on('submit','form[action]', function(a){
 function quickLink(action) {
     Html.Post(action,'',function(r){
         eval(r);
+        window.history.replaceState(undefined, '', action);
         return false;
     });
 }

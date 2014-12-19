@@ -17,4 +17,4 @@ Contrate o curso ou palestra de Scrum e descubra o verdadeiro potencial de sua e
     <li>Testar, Analisar, Criticar e Documentar o projeto</li>
     <li>Fazer a diferença - Requisitos devem ser atendidos, mas espectativas devem ser superadas</li>
 </ul>
-<a href="home/home">voltar</a>
+<a href="{$smarty.const.BASEDIR}home/home">voltar</a>

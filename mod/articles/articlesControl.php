@@ -50,7 +50,7 @@ class articlesControl extends Control {
         $this->model->addGridColumn('Artigo', 'title', 'Text', 'description');
         $this->model->showDbGridTitles(false);
         $this->model->setDbGridAutoHeader(false);
-        $this->model->setGridRowLink('articles/view', 'id');
+        $this->model->setGridRowLink(BASEDIR . 'articles/view', 'id');
         $this->view->setVariable('table', $this->model->dbGrid());
 
         $this->commitReplace($this->view->render(), '#two', true);

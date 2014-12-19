@@ -11,4 +11,4 @@
         {$content['html']}
     </div>
 </div>
-<a href="articles/articlelist">Voltar</a>
+<a href="{$smarty.const.BASEDIR}articles/articlelist">Voltar</a>
