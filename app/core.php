@@ -70,14 +70,19 @@ class core {
     public function execute() {
 
         $uri = $this->loadUrl();
+        String::arrayTrimNumericIndexed($uri);
 
         if (!$this->isAjax()) {
-            define('CALL', 'home');
+
+            require_once MODDIR . '/home/homeView.php';
+            require_once MODDIR . '/home/homeModel.php';
+            require_once MODDIR . '/home/homeControl.php';
+
             $home = new homeControl();
-            $home->itStarts();
+            $home->itStarts($uri);
+            exit;
         }
 
-        String::arrayTrimNumericIndexed($uri);
         if (count($uri)>1 && $uri[0] != '' && $uri[1] != '') {
             define('CALL', $uri[0]);
             $module = $uri[0].'Control';

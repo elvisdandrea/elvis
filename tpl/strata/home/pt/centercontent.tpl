@@ -1,4 +1,4 @@
-<section id="two">
+
     <h2>Palestras, cursos e Apresentações</h2>
     <div class="row">
         <article class="6u 12u$(3) work-item">
@@ -35,4 +35,3 @@
     <ul class="actions">
         <!--<li><a href="#" class="button">Veja também o portfolio GRAVI Systems</a></li>-->
     </ul>
-</section>

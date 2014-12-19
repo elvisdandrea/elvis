@@ -119,7 +119,11 @@ class Control {
      * @param   bool        $stay   - If it should not finish execution after rendering
      */
     protected function commitReplace($html, $block, $stay = false) {
-        echo Html::ReplaceHtml($html, $block);
+        if (!Core::isAjax()) {
+            echo $html;
+        } else {
+            echo Html::ReplaceHtml($html, $block);
+        }
         $stay || exit;
     }
 
@@ -132,7 +136,11 @@ class Control {
      * @param   bool        $stay   - If it should not finish execution after rendering
      */
     protected function commitAdd($html, $block, $stay = false) {
-        echo Html::AddHtml($html, $block);
+        if (!Core::isAjax()) {
+            echo $html;
+        } else {
+            echo Html::AddHtml($html, $block);
+        }
         $stay || exit;
     }
 
@@ -166,8 +174,10 @@ class Control {
      * @param   bool        $stay       - If it should not finish execution after rendering
      */
     protected function scrollToElement($element, $speed = '1000', $stay = false) {
-        echo '$("html, body").animate({scrollTop: $("'.$element.'").offset().top}, ' . $speed . ');';
-        $stay || exit;
+        if (Core::isAjax()) {
+            echo '$("html, body").animate({scrollTop: $("'.$element.'").offset().top}, ' . $speed . ');';
+            $stay || exit;
+        }
     }
     
 }
