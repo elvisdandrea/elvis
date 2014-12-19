@@ -70,6 +70,13 @@ class core {
     public function execute() {
 
         $uri = $this->loadUrl();
+
+        if (!$this->isAjax()) {
+            define('CALL', 'home');
+            $home = new homeControl();
+            $home->itStarts();
+        }
+
         String::arrayTrimNumericIndexed($uri);
         if (count($uri)>1 && $uri[0] != '' && $uri[1] != '') {
             define('CALL', $uri[0]);
@@ -81,12 +88,6 @@ class core {
                 echo $result;
                 exit;
             }
-        }
-
-        if (!$this->isAjax()) {
-            define('CALL', 'home');
-            $home = new homeControl();
-            $home->itStarts();
         }
 
         exit;

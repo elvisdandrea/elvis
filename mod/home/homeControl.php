@@ -49,6 +49,7 @@ class homeControl extends Control {
 
         $this->view->loadTemplate('index');
         echo $this->view->render();
+        exit;
     }
 
     /**
