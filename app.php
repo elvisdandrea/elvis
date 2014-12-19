@@ -13,7 +13,8 @@
 define('MAINURL',   ( strpos($_SERVER['SERVER_NAME'], 'http://') !== false ? $_SERVER['SERVER_NAME'] :
                         'http://' . $_SERVER['SERVER_NAME'] ) . dirname($_SERVER["PHP_SELF"]));
 
-define('BASEDIR',     (dirname($_SERVER['PHP_SELF']) != '' ? dirname($_SERVER['PHP_SELF']) . '/' : ''));
+define('BASEDIR',     (dirname($_SERVER['PHP_SELF']) != '/' ? dirname($_SERVER['PHP_SELF']) . '/' : ''));
+print_r(BASEDIR); exit;
 define('MAINDIR',   __DIR__);
 define('APPDIR',    MAINDIR .   '/app');
 define('IFCDIR',    APPDIR  .   '/ifc');
