@@ -17,8 +17,11 @@ class core {
      */
     private function loadUrl(){
 
-        $url = $_SERVER['REQUEST_URI'];
-        $uri = str_replace(BASEDIR,'', $url);
+        $uri = $_SERVER['REQUEST_URI'];
+
+        if (BASEDIR != '/')
+            $uri = str_replace(BASEDIR,'', $uri);
+        
         $uri = explode('/', $uri);
 
         array_walk($uri, function(&$item){
