@@ -21,7 +21,7 @@ class core {
 
         if (BASEDIR != '/')
             $uri = str_replace(BASEDIR,'', $uri);
-        
+
         $uri = explode('/', $uri);
 
         array_walk($uri, function(&$item){

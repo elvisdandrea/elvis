@@ -10,7 +10,7 @@
     <script src="{$smarty.const.MAINURL}/res/js/jquery-1.9.1.js"></script>
     <script src="{$smarty.const.T_JSURL}/jquery.poptrox.min.js"></script>
     <script src="{$smarty.const.T_JSURL}/skel.min.js"></script>
-    <script src="{$smarty.const.T_JSURL}/init.js"></script>
+    <script src="{$smarty.const.T_JSURL}/init.js?ver=1.0"></script>
     <noscript>
         <link rel="stylesheet" href="{$smarty.const.T_CSSURL}/skel.css" />
         <link rel="stylesheet" href="{$smarty.const.T_CSSURL}/style.css" />
