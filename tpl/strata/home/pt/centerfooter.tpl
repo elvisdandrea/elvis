@@ -3,7 +3,7 @@
     <p>Interessado em palestras ou um serciço GRAVI Systems? Me conte quem você é e qual serviço é de seu interesse.</p>
     <div class="row">
         <div class="8u 12u$(2)">
-            <form action="contact/send">
+            <form action="{$smarty.const.BASEDIR}contact/send">
                 <div class="row uniform 50%">
                     <div class="6u 12u$(3)"><input type="text" name="name" id="name" placeholder="Name" /></div>
                     <div class="6u$ 12u$(3)"><input type="email" name="email" id="email" placeholder="Email" /></div>

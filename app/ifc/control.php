@@ -177,6 +177,8 @@ class Control {
         if (Core::isAjax()) {
             echo '$("html, body").animate({scrollTop: $("'.$element.'").offset().top}, ' . $speed . ');';
             $stay || exit;
+        } else {
+            echo '<script>$("html, body").animate({scrollTop: $("'.$element.'").offset().top}, ' . $speed . ');</script>';
         }
     }
     
