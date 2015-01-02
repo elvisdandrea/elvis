@@ -54,7 +54,7 @@ class homeControl extends Control {
             $module = $uri[0].'Control';
             $action = $uri[1];
 
-            if (method_exists($module, $action)){
+            if (method_exists($module, $action)) {
                 $control = new $module;
                 ob_start();
                 $control->$action();

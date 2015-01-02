@@ -1,6 +1,6 @@
 <section id="three">
     <h2 id="contact">Contate-me</h2>
-    <p>Interessado em palestras ou um serciço GRAVI Systems? Me conte quem você é e qual serviço é de seu interesse.</p>
+    <p>Interessado em palestras? Me conte quem você é e qual serviço é de seu interesse.</p>
     <div class="row">
         <div class="8u 12u$(2)">
             <form action="{$smarty.const.BASEDIR}contact/send">

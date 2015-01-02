@@ -63,7 +63,12 @@ class articlesControl extends Control {
     public function view() {
 
         $id = $this->getQueryString('id');
-        $this->model->getArticle($id);
+        $d = $this->model->getArticle($id);
+
+        if (!$d) {
+            $this->commitReplace($this->view->get404(), '#two', true);
+            return;
+        }
         $this->view->setVariable('content', $this->model->getRow(0));
         $this->view->loadTemplate(LNG . '/view');
         $this->commitReplace($this->view->render(), '#two', true);
