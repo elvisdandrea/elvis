@@ -70,6 +70,6 @@ class homeControl extends Control {
     public function home() {
         #$this->view->loadTemplate( 'elements_example');
         $this->view->loadTemplate( LNG . '/centercontent');
-        $this->commitReplace($this->view->render(), '#two');
+        $this->commitReplace($this->view->render(), '#two', true);
     }
 }
