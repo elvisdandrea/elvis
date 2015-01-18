@@ -64,10 +64,6 @@ class core {
         foreach(array(
                     LIBDIR . '/smarty/Smarty.class.php',
 
-                    LIBDIR . '/cr.php',
-                    LIBDIR . '/html.php',
-                    LIBDIR . '/string.php',
-
                     IFCDIR . '/control.php',
                     IFCDIR . '/model.php',
                     IFCDIR . '/view.php')
@@ -98,6 +94,9 @@ class core {
 
         $uri = $this->loadUrl();
         String::arrayTrimNumericIndexed($uri);
+
+        if (RESTFUL == '1')
+            Rest::authenticate();
 
         /**
          * Going Home

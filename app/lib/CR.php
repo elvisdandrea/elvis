@@ -12,28 +12,7 @@
  * Just use CR_::get($string) to Encrypt or Decrypt anything
  * or CR_::encrypt($string), CR_::decrypt($string)
  */
-class CR_ {
-
-    /**
-     * If encrypted, decrypts
-     * If plain text, encrypts
-     *
-     * Simple as that
-     *
-     * @param   string      $str    - The original string
-     * @return  string              - the encrypted/decrypted string
-     */
-    public static function get($str)
-    {
-
-        if (is_string($str)) {
-            if (substr($str, 0, 1) == '!') {
-                return self::decrypt($str);
-            } else {
-                return self::encrypt($str);
-            }
-        }
-    }
+class CR {
 
     /**
      * Encrypts a text

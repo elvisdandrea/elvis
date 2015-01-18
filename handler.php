@@ -19,6 +19,17 @@
 register_shutdown_function('fatalErrorHandler');
 spl_autoload_register('autoLoad');
 
+/**
+ * Is it an ajax request?
+ *
+ * A function outside core to handle
+ * when even core isn't working
+ *
+ * @return  bool
+ */
+function isAjax() {
+    return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+}
 
 /**
  * Fatal Error Handler
