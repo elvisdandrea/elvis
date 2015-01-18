@@ -42,7 +42,7 @@ class articlesControl extends Control {
      * It will get articles from database
      * and display on a table
      */
-    public function articleList() {
+    public function articlesPage() {
 
         $this->view->loadTemplate(LNG . '/articlesList');
         $this->model->getArticlesList();

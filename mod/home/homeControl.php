@@ -50,8 +50,7 @@ class homeControl extends Control {
     public function itStarts($uri = array()) {
 
         $this->view->loadTemplate('index');
-
-        if (count($uri) > 1) {
+        if (count($uri) > 0) {
             ob_start();
             Core::runMethod($uri);
             $result = ob_get_contents();
@@ -67,7 +66,7 @@ class homeControl extends Control {
     /**
      * When returning the home page, loads the inner content only
      */
-    public function home() {
+    public function homePage() {
         #$this->view->loadTemplate( 'elements_example');
         $this->view->loadTemplate( LNG . '/centercontent');
         $this->commitReplace($this->view->render(), '#two', true);
