@@ -1,4 +1,4 @@
 <h2>Usabilidade de Software</h2>
 Desculpe, O conteúdo desta palestra está sendo elaborado.<br>
 Enquanto isso, apriveite as palestras de outros conteúdos para sua equipe de desenvolvimento.
-<a href="{$smarty.const.BASEDIR}home/home">voltar</a>
+<a href="{$smarty.const.BASEDIR}home">voltar</a>

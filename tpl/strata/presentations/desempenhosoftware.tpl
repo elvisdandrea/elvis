@@ -22,4 +22,4 @@ O que você quer que ele fale sobre seu software para os outros?
     <li>Proteção contra ataques via headers</li>
     <li>Proteção de nível de servidor</li>
 </ul>
-<a href="{$smarty.const.BASEDIR}home/home">voltar</a>
+<a href="{$smarty.const.BASEDIR}home">voltar</a>

@@ -22,4 +22,4 @@ um troféu.
     <li>Scripts de backup e manutenção</li>
     <li>Plus: Criando servidor de DNS, Proxy, DHCP, Traffic Shaping</li>
 </ul>
-<a href="{$smarty.const.BASEDIR}home/home">voltar</a>
+<a href="{$smarty.const.BASEDIR}home">voltar</a>

@@ -25,4 +25,4 @@ Contrate o curso ou palestra de desenvolvimento de projetos e desenvolva softwar
     <li>Documentação do produto</li>
     <li>Desenvolvimento expiral</li>
 </ul>
-<a href="{$smarty.const.BASEDIR}home/home">voltar</a>
+<a href="{$smarty.const.BASEDIR}home">voltar</a>
