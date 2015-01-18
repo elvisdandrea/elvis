@@ -73,4 +73,13 @@ class homeControl extends Control {
         $this->view->loadTemplate( LNG . '/centercontent');
         $this->commitReplace($this->view->render(), '#two', true);
     }
+
+    /**
+     * When an ajax Method is not found
+     *
+     * @param   array       $url        - The URL in case you need
+     */
+    public function notFound($url) {
+        $this->commitReplace($this->view->get404(), '#two');
+    }
 }
