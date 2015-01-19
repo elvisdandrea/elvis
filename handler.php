@@ -62,17 +62,21 @@ function fatalErrorHandler(){
             background: url("<?php echo IMGURL . '/bg.jpg'; ?>") repeat scroll 0 0 rgba(0, 0, 0, 0);
             font-family: "Strait",sans-serif;
         }
-
         h1 {
             clear: both;
             color: #fff;
             padding: 30px;
             font-family: "Fjalla One",sans-serif;
-            font-size: 25px;
+            font-size: 40px;
             margin-top: 1px;
             text-shadow: 6px 1px 6px #333;
         }
-        label {
+        h1 img {
+            float: left;
+            margin-top: -0.5em;
+            padding: 0 1em 0 0;
+        }
+        .text {
             clear: both;
             border: medium none;
             color: #98af95;
@@ -83,8 +87,15 @@ function fatalErrorHandler(){
             margin: 0;
             display: block;
         }
+        .text label {
+            line-height: 30px;
+        }
+        .text li {
+            padding: 0.3em;
+            font-size: 15px;
+        }
         .banner {
-            margin: 100px auto 0;
+            margin: 2.2em auto 0;
             width: 50%;
         }
         .message {
@@ -92,20 +103,28 @@ function fatalErrorHandler(){
             text-shadow: 6px 1px 6px #333;
             padding: 1.2em;
         }
+        .footer {
+            text-align: center;
+            margin: 1.8em 2.8em 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #4cae4c;
+        }
     </style>
     <div class="banner">
     <h1>
-        <img src="<?php echo IMGURL . '/logo.png'; ?>" alt="cerberus_logo" width="90px"/>
-        Sorry, something went bad!</h1>
+        <img src="<?php echo IMGURL. '/logo.png'; ?>" alt="cerberus_logo" width="115px"/>
+        <label>Sorry, something went bad!</label></h1>
         <div class="message">
-            <label>I know this is emarassing, but the server must be under maintenance. Please come back later.</label>
+            <div class="text">
+            <label>I know this is emarassing, but the server must be under maintenance. <br>Please come back later.</label>
             <?php if (ENVDEV == '0') exit; ?>
-            <label>
-                Error: <?php echo $error['type']; ?> <br>
-                Message: <?php echo $error['message']; ?> <br>
-                File: <?php echo $error['file']; ?> <br>
-                Line: <?php echo $error['line']; ?>
-            </label>
+                <ul>
+                    <li>Error: <?php echo $error['message']; ?> </li>
+                    <li>File: <?php echo $error['file']; ?> </li>
+                    <li>Line: <?php echo $error['line']; ?> </li>
+                </ul>
+            </div>
         </div>
     </div>
     <?php exit;
