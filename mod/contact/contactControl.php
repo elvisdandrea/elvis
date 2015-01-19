@@ -62,5 +62,14 @@ class contactControl extends Control {
 
     }
 
+    /**
+     * About page
+     */
+    public function about() {
+
+        $this->view->loadTemplate('about');
+        $this->commitReplace($this->view->render(), '#two');
+    }
+
 
 }
